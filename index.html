@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game project</title>
-</head>
-<body>
-    <h1>hello oktober fest</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Race Car</title>
+  </head>
+  <body>
+    <div class="teste">
+    <div class="game-intro">
+      <img src="" alt="" class="logo-img" />
+      <br />
+      <button id="start-button">StartGame</button>
+      <p>Use the Up arrow and the space bar to make the motorcycle jump!</p>
+      <!-- <img src="./images/" alt="" class="arrows-img" /> -->
+    </div>
 
-</body>
+    <div id="game-board">
+      <canvas id="canvas" width="1000" height="500" style="border: 2px solid black;"></canvas>
+    </div>
+</div>
+
+    <script type="text/javascript" src="docs/assets/scripts/player.js"></script>
+    <script type="text/javascript" src="docs/assets/scripts/controls.js"></script>
+    <script type="text/javascript" src="docs/assets/scripts/enemy.js"></script>
+    <script type="text/javascript" src="docs/assets/scripts/game.js"></script>
+    <script type="text/javascript" src="docs/assets/scripts/main.js"></script>
+  </body>
 </html>

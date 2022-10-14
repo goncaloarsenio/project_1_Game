@@ -1,0 +1,21 @@
+ body{
+    padding: 0;
+    text-align: center;
+    background-color: rgb(110, 106, 106);
+    background-repeat: no-repeat;
+}
+
+.teste{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#start-button{
+    width: 20%;
+    height: 50px;
+    color:white;
+    background-color: #a81212;
+}
+
