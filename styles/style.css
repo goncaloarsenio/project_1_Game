@@ -1,7 +1,7 @@
  body{
     padding: 0;
     text-align: center;
-    background-color: rgb(110, 106, 106);
+    background-color: rgb(201, 201, 201);
     background-repeat: no-repeat;
 }
 
@@ -13,8 +13,8 @@
 }
 
 #start-button{
-    width: 20%;
-    height: 50px;
+    width: 60%;
+    height: 70px;
     color:white;
     background-color: #a81212;
 }
