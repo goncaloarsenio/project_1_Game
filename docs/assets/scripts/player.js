@@ -35,6 +35,25 @@ class Player {
       this.ctx.drawImage(this.img, this.x, this.y, 110, 140);
     }
 
+    top() {
+      return this.y;
+    }
+    bottom() {
+      return (this.y - 75) + this.h;
+    }
+    left() {
+      return (this.x + 50);
+    }
+    right() {
+      return (this.x -65) + this.w;
+    }
 
-
+    crashWith(obstacle) {
+      return !(
+        this.bottom() < obstacle.top() ||
+        this.top() > obstacle.bottom() ||
+        this.right() < obstacle.left() ||
+        this.left() > obstacle.right()
+      );
+    }
 }

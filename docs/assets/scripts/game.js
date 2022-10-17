@@ -7,8 +7,8 @@ class Game {
         this.obstacles = [];
         this.intervalId = null;
         this.frames = 0;
-        this.width = 1000;
-        this.height = 500;
+        this.width = 1200;
+        this.height = 550;
         this.controls = null;
         this.bgimg = new Image();
       this.bgimg.src = "docs/assets/images/city1.jpeg";
@@ -32,17 +32,14 @@ class Game {
         this.moto.draw();
         this.updateObstacles();
         this.score();
+        this.checkGameOver();
     }
-
-    stop() {
-        clearInterval(this.intervalId);
-      }
 
     score() {
         const points = Math.floor(this.frames / 15);
         this.ctx.font = '18px monospace';
         this.ctx.fillStyle = 'black';
-        this.ctx.fillText(`Score: ${points}`, 500, 100);
+        this.ctx.fillText(`Score: ${points}`, 850, 50);
       } 
 
       updateObstacles() {
@@ -60,4 +57,19 @@ class Game {
 
       }
     }
+
+    checkGameOver() {
+        const crashed = this.obstacles.some((obstacle) => {
+          return this.moto.crashWith(obstacle);
+        });
+    
+        if (crashed || moto.top() > 0) {
+          this.stop();
+        }
+      }
+    
+      stop() {
+        clearInterval(this.intervalId);
+      }
+
 }

@@ -3,7 +3,7 @@ class Obstacle {
         this.ctx = ctx;
         this.x = 1000;
         this.y = 350;
-        this.w = 150
+        this.w = 200
         this.h = 200
         this.img = new Image();
         this.img.src = 'docs/assets/images/spr_reddisplay_0-removebg-preview.png'
@@ -35,7 +35,7 @@ class Obstacle {
             this.ctx = ctx;
         this.x = 1000;
         this.y = 300;
-        this.w = 200
+        this.w = 250
         this.h = 250
         this.img = new Image();
         this.img.src = 'docs/assets/images/monster-truck-removebg-preview.png'

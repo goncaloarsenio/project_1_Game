@@ -7,7 +7,7 @@ class Controls {
           switch (e.code) {
             case 'ArrowUp':
               if (this.moto.y > 100) {
-                this.moto.gravity = -0.25;
+                this.moto.gravity = -0.4;
               }
               break;
             case 'space':
@@ -18,7 +18,7 @@ class Controls {
           }
         });
         window.addEventListener('keyup', (e) => {
-                this.moto.gravity = 0.05
+                this.moto.gravity = 0.35
         });
       } 
     }
