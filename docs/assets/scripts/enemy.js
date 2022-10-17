@@ -26,18 +26,33 @@ class Obstacle {
       right() {
         return this.x + this.w;
       }
+    
     }
-
 
     class Truck extends Obstacle {
         constructor(ctx) {
-            super(ctx)
+          super(ctx)
             this.ctx = ctx;
-        this.x = 1000;
-        this.y = 300;
-        this.w = 250
-        this.h = 250
-        this.img = new Image();
-        this.img.src = 'docs/assets/images/monster-truck-removebg-preview.png'
+            this.x = 1000;
+            this.y = 300;
+            this.w = 250
+            this.h = 250
+            this.img = new Image();
+            this.img.src = 'docs/assets/images/monster-truck-removebg-preview.png'
+        };
+
+
+      }
+
+        class Airplane extends Obstacle {
+          constructor(ctx) {
+            super (ctx)
+            this.ctx = ctx;
+            this.x = 1000;
+            this.y = 150;
+            this.w = 200;
+            this.h = 100;
+            this.img = new Image();
+            this.img.src = 'docs/assets/images/airplane-removebg-preview.png'
+          };
         }
-    }

@@ -39,7 +39,7 @@ class Game {
         const points = Math.floor(this.frames / 15);
         this.ctx.font = '18px monospace';
         this.ctx.fillStyle = 'black';
-        this.ctx.fillText(`Score: ${points}`, 850, 50);
+        this.ctx.fillText(`Score: ${points}`, 1020, 50);
       } 
 
       updateObstacles() {
@@ -56,6 +56,11 @@ class Game {
             this.obstacles.push(new Truck(this.ctx))
 
       }
+
+      if(this.frames % 400 === 0) {
+        this.obstacles.push(new Airplane(this.ctx))
+      }
+
     }
 
     checkGameOver() {
