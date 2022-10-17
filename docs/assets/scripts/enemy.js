@@ -1,15 +1,16 @@
 class Obstacle {
-    contructor(ctx){
+    constructor(ctx){
         this.ctx = ctx;
         this.x = 1000;
-        this.y = 450;
-        this.w = 100
-        this.h = 80
+        this.y = 350;
+        this.w = 150
+        this.h = 200
         this.img = new Image();
+        this.img.src = 'docs/assets/images/spr_reddisplay_0-removebg-preview.png'
     }
 
     draw(){
-       this.img.src = '/docs/assets/images/spr_reddisplay_0.png' 
+ 
        this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     }
   
@@ -25,4 +26,18 @@ class Obstacle {
       right() {
         return this.x + this.w;
       }
+    }
+
+
+    class Truck extends Obstacle {
+        constructor(ctx) {
+            super(ctx)
+            this.ctx = ctx;
+        this.x = 1000;
+        this.y = 300;
+        this.w = 200
+        this.h = 250
+        this.img = new Image();
+        this.img.src = 'docs/assets/images/monster-truck-removebg-preview.png'
+        }
     }

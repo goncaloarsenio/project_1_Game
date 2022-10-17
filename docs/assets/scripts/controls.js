@@ -2,13 +2,12 @@ class Controls {
     constructor(moto) {
       this.moto = moto;
     }
-
     keyboardEvents() {
         window.addEventListener('keydown', (e) => {
           switch (e.code) {
             case 'ArrowUp':
               if (this.moto.y > 100) {
-                this.moto.y -= 20;
+                this.moto.gravity = -0.25;
               }
               break;
             case 'space':
@@ -17,6 +16,9 @@ class Controls {
               }
               break;
           }
+        });
+        window.addEventListener('keyup', (e) => {
+                this.moto.gravity = 0.05
         });
       } 
     }
