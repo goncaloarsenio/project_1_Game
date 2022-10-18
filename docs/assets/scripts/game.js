@@ -12,12 +12,11 @@ class Game {
         this.controls = null;
         this.bgimg = new Image()
         this.points= 0;
-        this.count= 0;
         this.bgimg.src = "docs/assets/images/city1.jpeg";
         this.imgGameOver = new Image();
         this.imgGameOver.src = "/docs/assets/images/game-over.jpeg"
         this.imgGameWin = new Image();
-        this.imgGameWin.src = "/docs/assets/images/backg2.webp"
+        this.imgGameWin.src = "/docs/assets/images/Screenshot 2022-10-18 at 17.00.21.png"
     }
 
      drawBackground() {
@@ -75,8 +74,10 @@ class Game {
     timer(){
       this.ctx.font = "18px silkscreen";
       this.ctx.fillStyle = "white";
+      let seconds = Math.floor(30 - (this.frames / 60))
+      this.ctx.fillText(`00:${seconds}`, 1020, 80)
       this.count = 30 - (this.frames / 60);
-      this.ctx.fillText(`Timer: ${this.count.toFixed(2)[0]}${this.count.toFixed(2)[1]}:${this.count.toFixed(2)[3]}${this.count.toFixed(2)[4]}`, 1020, 80);
+
       };
 
     checkGameOver() {
