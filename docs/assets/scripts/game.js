@@ -10,8 +10,14 @@ class Game {
         this.width = 1200;
         this.height = 550;
         this.controls = null;
-        this.bgimg = new Image();
-      this.bgimg.src = "docs/assets/images/city1.jpeg";
+        this.bgimg = new Image()
+        this.points= 0;
+        this.count= 0;
+        this.bgimg.src = "docs/assets/images/city1.jpeg";
+        this.imgGameOver = new Image();
+        this.imgGameOver.src = "/docs/assets/images/game-over.jpeg"
+        this.imgGameWin = new Image();
+        this.imgGameWin.src = "/docs/assets/images/backg2.webp"
     }
 
      drawBackground() {
@@ -32,14 +38,17 @@ class Game {
         this.moto.draw();
         this.updateObstacles();
         this.score();
+        this.timer();
         this.checkGameOver();
+        this.checkWin();
+        
     }
 
     score() {
-        const points = Math.floor(this.frames / 15);
+        this.points = Math.floor(this.frames / 15);
         this.ctx.font = '18px monospace';
         this.ctx.fillStyle = 'black';
-        this.ctx.fillText(`Score: ${points}`, 1020, 50);
+        this.ctx.fillText(`Score: ${this.points}`, 1020, 50);
       } 
 
       updateObstacles() {
@@ -63,18 +72,43 @@ class Game {
 
     }
 
+    timer(){
+      this.ctx.font = "18px silkscreen";
+      this.ctx.fillStyle = "white";
+      this.count = 30 - (this.frames / 60);
+      this.ctx.fillText(`Timer: ${this.count.toFixed(2)[0]}${this.count.toFixed(2)[1]}:${this.count.toFixed(2)[3]}${this.count.toFixed(2)[4]}`, 1020, 80);
+      };
+
     checkGameOver() {
         const crashed = this.obstacles.some((obstacle) => {
           return this.moto.crashWith(obstacle);
         });
     
-        if (crashed || moto.top() > 0) {
+        if (crashed || this.moto.top() < 0) {
+          this.ctx.drawImage(this.imgGameOver, 0, 0, this.width, this.height);
           this.stop();
         }
       }
+
+      checkWin() {
+        if(this.count <= 0) {
+        this.ctx.drawImage(this.imgGameWin, 0, 0, this.width, this.height);
+        this.stop();
+        }
+
+      }
     
       stop() {
+        /* this.ctx.clearRect(0,0,this.width, this.height) */
         clearInterval(this.intervalId);
+        /* this.ctx.drawImage(this.imgGameOver, 0, 0, this.width, this.height); */
+        this.ctx.font = "20px silkscreen"
+        this.ctx.fillStyle = "white"
+        this.ctx.fillText(`FINAL SCORE: ${this.points}`, 520, 410 )
+        document.getElementById('restart-button').style.display = "block"
+      
       }
+
+      
 
 }

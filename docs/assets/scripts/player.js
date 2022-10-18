@@ -36,7 +36,7 @@ class Player {
     }
 
     top() {
-      return this.y;
+      return (this.y +50);
     }
     bottom() {
       return (this.y - 75) + this.h;

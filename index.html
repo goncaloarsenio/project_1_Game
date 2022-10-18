@@ -8,20 +8,27 @@
     <title>Race Car</title>
   </head>
   <body>
-    <div class="teste">
+  <div class="teste">
     <div class="game-intro">
       <img src="" alt="" class="logo-img" />
       <br />
       <button id="start-button">Start Game</button>
-      <p>Use the Up arrow and the space bar to make the motorcycle jump!</p>
+      <p>Use the Up arrow to make the motorcycle jump!</p>
       <!-- <img src="./images/" alt="" class="arrows-img" /> -->
     </div>
 
     <div id="game-board">
       <canvas id="canvas" width="1200" height="550" style="border: 2px solid black;"></canvas>
     </div>
-</div>
 
+    <!-- <div class="restart">
+      <button class="restart-button">Restart</button>
+    </div> -->
+
+</div>
+<div class="restart">
+  <button id="restart-button">Restart</button>
+</div>
     <script type="text/javascript" src="docs/assets/scripts/player.js"></script>
     <script type="text/javascript" src="docs/assets/scripts/controls.js"></script>
     <script type="text/javascript" src="docs/assets/scripts/enemy.js"></script>
