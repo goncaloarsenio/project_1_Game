@@ -49,7 +49,7 @@ class Obstacle {
             super (ctx)
             this.ctx = ctx;
             this.x = 1000;
-            this.y = 150;
+            this.y = 100;
             this.w = 200;
             this.h = 100;
             this.img = new Image();

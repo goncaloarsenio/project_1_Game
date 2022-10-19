@@ -10,13 +10,13 @@ class Game {
         this.width = 1200;
         this.height = 550;
         this.controls = null;
-        this.bgimg = new Image()
         this.points= 0;
-        this.bgimg.src = "docs/assets/images/city1.jpeg";
+        this.bgimg = new Image()
+        this.bgimg.src = "docs/assets/images/citygamebg.jpeg";
         this.imgGameOver = new Image();
-        this.imgGameOver.src = "/docs/assets/images/game-over.jpeg"
+        this.imgGameOver.src = "docs/assets/images/game-over.jpeg"
         this.imgGameWin = new Image();
-        this.imgGameWin.src = "/docs/assets/images/Screenshot 2022-10-18 at 17.00.21.png"
+        this.imgGameWin.src = "docs/assets/images/Screenshot 2022-10-18 at 17.00.21.png"
     }
 
      drawBackground() {
@@ -43,7 +43,7 @@ class Game {
         
     }
 
-    score() {
+       score() {
         this.points = Math.floor(this.frames / 15);
         this.ctx.font = '18px monospace';
         this.ctx.fillStyle = 'black';
@@ -74,9 +74,9 @@ class Game {
     timer(){
       this.ctx.font = "18px silkscreen";
       this.ctx.fillStyle = "white";
-      let seconds = Math.floor(30 - (this.frames / 60))
+      let seconds = Math.floor(45 - (this.frames / 60))
       this.ctx.fillText(`00:${seconds}`, 1020, 80)
-      this.count = 30 - (this.frames / 60);
+      this.count = 45 - (this.frames / 60);
 
       };
 
