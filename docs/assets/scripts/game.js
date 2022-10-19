@@ -7,14 +7,14 @@ class Game {
         this.obstacles = [];
         this.intervalId = null;
         this.frames = 0;
-        this.width = 1200;
-        this.height = 550;
+        this.width = 1100;
+        this.height = 500;
         this.controls = null;
         this.points= 0;
         this.bgimg = new Image()
         this.bgimg.src = "./docs/assets/images/citygamebg.jpeg";
         this.imgGameOver = new Image();
-        this.imgGameOver.src = "./docs/assets/images/game-over.jpeg"
+        this.imgGameOver.src = "./docs/assets/images/gmover.jpeg"
         this.imgGameWin = new Image();
         this.imgGameWin.src = "./docs/assets/images/Screenshot 2022-10-18 at 17.00.21.png"
     }

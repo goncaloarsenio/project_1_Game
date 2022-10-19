@@ -5,9 +5,10 @@
     padding: 0;
     text-align: center;
    /*  background-color: rgb(201, 201, 201); */
-   background-image: url('/docs/assets/images/cccccc.png');
+   background-image: url('/docs/assets/images/Screenshot 2022-10-19 at 15.11.58.png');
+
    background-repeat: no-repeat;
-   background-size: cover;
+   background-size: 115vw;
 
 }
 
@@ -48,4 +49,18 @@
 
 .hidden {
     visibility: hidden;
+}
+
+#first-game{
+    background-color: #00d3fd;
+    color: white;
+    width: 40%;
+    height: 50px;
+}
+
+#second-game{
+    background-color: #00d3fd;
+    color: white;
+    width: 40%;
+    height: 50px;
 }

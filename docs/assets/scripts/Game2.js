@@ -7,14 +7,15 @@ class SecondGame {
         this.obstacles = [];
         this.intervalId = null;
         this.frames = 0;
-        this.width = 1200;
-        this.height = 550;
+        this.width = 1100;
+        this.height = 500;
         this.controls = null;
         this.points= 0;
         this.bgimg = new Image()
+        this.count
         this.bgimg.src = "./docs/assets/images/citygamebg.jpeg";
         this.imgGameOver = new Image();
-        this.imgGameOver.src = "./docs/assets/images/game-over.jpeg"
+        this.imgGameOver.src = "./docs/assets/images/gmover.jpeg"
         this.imgGameWin = new Image();
         this.imgGameWin.src = "./docs/assets/images/Screenshot 2022-10-18 at 17.00.21.png"
     }
@@ -24,8 +25,8 @@ class SecondGame {
      }
 
     start() {
-        this.moto = new Player(150, 375, 150, 100, this.ctx);
-        this.controls = new Controls(this.moto);
+        this.moto = new Player2(150, 220, 150, 100, this.ctx);
+        this.controls = new Controls2(this.moto);
         this.controls.keyboardEvents();
         this.intervalId = setInterval(this.update, 1000 / 60);
     }
@@ -36,20 +37,12 @@ class SecondGame {
         this.moto.newPos()
         this.moto.draw();
         this.updateObstacles();
-        this.score();
-        this.timer();
         this.checkGameOver();
-        this.checkWin();
+        this.timer();
         
     }
 
-       score() {
-        this.points = Math.floor(this.frames / 15);
-        this.ctx.font = '18px monospace';
-        this.ctx.fillStyle = 'black';
-        this.ctx.fillText(`Score: ${this.points}`, 1020, 50);
-      } 
-
+    
       updateObstacles() {
         for (let i= 0; i < this.obstacles.length; i++) {
             this.obstacles[i].x -= 4;
@@ -85,19 +78,17 @@ class SecondGame {
           return this.moto.crashWith(obstacle);
         });
     
-        if (crashed || this.moto.top() < 0) {
+        if (crashed) {
           this.ctx.drawImage(this.imgGameOver, 0, 0, this.width, this.height);
           this.stop();
         }
-      }
-
-      checkWin() {
         if(this.count <= 0) {
-        this.ctx.drawImage(this.imgGameWin, 0, 0, this.width, this.height);
-        this.stop();
-        }
-
+            this.ctx.drawImage(this.imgGameWin, 0, 0, this.width, this.height);
+            this.stop();
+            }
       }
+
+
     
       stop() {
         /* this.ctx.clearRect(0,0,this.width, this.height) */
