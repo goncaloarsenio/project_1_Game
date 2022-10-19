@@ -11,7 +11,7 @@ class Player {
       this.gravity = 0.05;
       this.gravitySpeed = 0;
   
-      this.img.src = 'docs/assets/scripts/image2-removebg-preview (2).png';
+      this.img.src = './docs/assets/scripts/image2-removebg-preview (2).png';
   }
     
   update() {

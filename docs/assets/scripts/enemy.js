@@ -6,7 +6,7 @@ class Obstacle {
         this.w = 200
         this.h = 200
         this.img = new Image();
-        this.img.src = 'docs/assets/images/spr_reddisplay_0-removebg-preview.png'
+        this.img.src = './docs/assets/images/spr_reddisplay_0-removebg-preview.png'
     }
 
     draw(){
@@ -38,7 +38,7 @@ class Obstacle {
             this.w = 250
             this.h = 250
             this.img = new Image();
-            this.img.src = 'docs/assets/images/monster-truck-removebg-preview.png'
+            this.img.src = './docs/assets/images/monster-truck-removebg-preview.png'
         };
 
 
@@ -53,6 +53,6 @@ class Obstacle {
             this.w = 200;
             this.h = 100;
             this.img = new Image();
-            this.img.src = 'docs/assets/images/airplane-removebg-preview.png'
+            this.img.src = './docs/assets/images/airplane-removebg-preview.png'
           };
         }

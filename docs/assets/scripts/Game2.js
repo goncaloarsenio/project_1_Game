@@ -12,11 +12,11 @@ class SecondGame {
         this.controls = null;
         this.points= 0;
         this.bgimg = new Image()
-        this.bgimg.src = "docs/assets/images/citygamebg.jpeg";
+        this.bgimg.src = "./docs/assets/images/citygamebg.jpeg";
         this.imgGameOver = new Image();
-        this.imgGameOver.src = "docs/assets/images/game-over.jpeg"
+        this.imgGameOver.src = "./docs/assets/images/game-over.jpeg"
         this.imgGameWin = new Image();
-        this.imgGameWin.src = "docs/assets/images/Screenshot 2022-10-18 at 17.00.21.png"
+        this.imgGameWin.src = "./docs/assets/images/Screenshot 2022-10-18 at 17.00.21.png"
     }
 
      drawBackground() {
