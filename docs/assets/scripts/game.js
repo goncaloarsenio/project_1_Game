@@ -1,7 +1,6 @@
+
 class Game {
     constructor(ctx) {
-        /* this.canvas = document.getElementById('canvas');
-        this.ctx = canvas.getContext('2d'); */
         this.ctx = ctx
         this.moto = null;
         this.obstacles = [];
@@ -36,19 +35,11 @@ class Game {
         this.moto.newPos()
         this.moto.draw();
         this.updateObstacles();
-        this.score();
         this.timer();
         this.checkGameOver();
         this.checkWin();
         
     }
-
-       score() {
-        this.points = Math.floor(this.frames / 15);
-        this.ctx.font = '18px monospace';
-        this.ctx.fillStyle = 'black';
-        this.ctx.fillText(`Score: ${this.points}`, 1020, 50);
-      } 
 
       updateObstacles() {
         for (let i= 0; i < this.obstacles.length; i++) {
@@ -75,7 +66,7 @@ class Game {
       this.ctx.font = "18px silkscreen";
       this.ctx.fillStyle = "white";
       let seconds = Math.floor(45 - (this.frames / 60))
-      this.ctx.fillText(`00:${seconds}`, 1020, 80)
+      this.ctx.fillText(`00:${seconds}`, 1000, 40)
       this.count = 45 - (this.frames / 60);
 
       };
@@ -88,6 +79,7 @@ class Game {
         if (crashed || this.moto.top() < 0) {
           this.ctx.drawImage(this.imgGameOver, 0, 0, this.width, this.height);
           this.stop();
+          restart1.classList.remove('hidden');
         }
       }
 
@@ -95,21 +87,16 @@ class Game {
         if(this.count <= 0) {
         this.ctx.drawImage(this.imgGameWin, 0, 0, this.width, this.height);
         this.stop();
+        restart1.classList.remove('hidden');
         }
 
       }
     
       stop() {
-        /* this.ctx.clearRect(0,0,this.width, this.height) */
         clearInterval(this.intervalId);
-        /* this.ctx.drawImage(this.imgGameOver, 0, 0, this.width, this.height); */
         this.ctx.font = "20px silkscreen"
         this.ctx.fillStyle = "white"
-        this.ctx.fillText(`FINAL SCORE: ${this.points}`, 520, 410 )
         document.getElementById('restart-button').style.display = "block"
-      
-      }
-
-      
+     }
 
 }

@@ -22,11 +22,18 @@
    background-size: cover; */
 }
 #start-button{
-    width: 60%;
+    margin-top: 5px;
+    margin-left: 170px;
+    margin-right: 170px;
+    width: 30%;
     height: 70px;
     color:white;
-    background-color: #00d3fd;
     font-size: 25px;
+    font-family: 'Silkscreen', cursive;
+    background-color: #a324ec;
+    border-radius: 16px;
+    cursor: pointer;
+
 } 
 
 
@@ -35,11 +42,19 @@
 }
  
 #restart-button{
+    position: absolute;
+    top: 35px;
+    left: 670px;
+    /* padding: 5px; */
+    padding-right: 15px;
+    padding-left: 15px;
     color:white;
-    background-color: #00d3fd;
     font-size: 25px;
-    height: 50px;
+    font-family: 'Silkscreen', cursive;
+    background-color: #a324ec;
+    border-radius: 16px;
     display: none;
+    cursor: pointer;
     /* display: flex;
     align-items: center;
     align-content: center; */
@@ -52,15 +67,31 @@
 }
 
 #first-game{
-    background-color: #00d3fd;
+    background-color: #a324ec;
+    border-radius: 16px;
     color: white;
     width: 40%;
     height: 50px;
+    font-family: 'Silkscreen', cursive;
+    cursor: pointer;
+
 }
 
 #second-game{
-    background-color: #00d3fd;
+    background-color: #a324ec;
+    border-radius: 16px;
     color: white;
     width: 40%;
     height: 50px;
+    font-family: 'Silkscreen', cursive;
+    cursor: pointer;
+
 }
+
+/* .restart-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Silkscreen', cursive;
+
+} */

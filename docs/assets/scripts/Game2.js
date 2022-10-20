@@ -1,7 +1,5 @@
 class SecondGame {
     constructor(ctx) {
-        /* this.canvas = document.getElementById('canvas');
-        this.ctx = canvas.getContext('2d'); */
         this.ctx = ctx
         this.moto = null;
         this.obstacles = [];
@@ -13,7 +11,7 @@ class SecondGame {
         this.points= 0;
         this.bgimg = new Image()
         this.count
-        this.bgimg.src = "./docs/assets/images/citygamebg.jpeg";
+        this.bgimg.src = "docs/assets/images/web-backggg.jpeg";
         this.imgGameOver = new Image();
         this.imgGameOver.src = "./docs/assets/images/gmover.jpeg"
         this.imgGameWin = new Image();
@@ -45,7 +43,7 @@ class SecondGame {
     
       updateObstacles() {
         for (let i= 0; i < this.obstacles.length; i++) {
-            this.obstacles[i].x -= 4;
+            this.obstacles[i].x -= 10;
             this.obstacles[i].draw();
         }
 
@@ -68,7 +66,7 @@ class SecondGame {
       this.ctx.font = "18px silkscreen";
       this.ctx.fillStyle = "white";
       let seconds = Math.floor(45 - (this.frames / 60))
-      this.ctx.fillText(`00:${seconds}`, 1020, 80)
+      this.ctx.fillText(`00:${seconds}`, 1020, 40)
       this.count = 45 - (this.frames / 60);
 
       };
@@ -81,22 +79,21 @@ class SecondGame {
         if (crashed) {
           this.ctx.drawImage(this.imgGameOver, 0, 0, this.width, this.height);
           this.stop();
+          restart1.classList.remove('hidden');
         }
         if(this.count <= 0) {
             this.ctx.drawImage(this.imgGameWin, 0, 0, this.width, this.height);
             this.stop();
+            restart1.classList.remove('hidden');
             }
       }
 
 
     
       stop() {
-        /* this.ctx.clearRect(0,0,this.width, this.height) */
         clearInterval(this.intervalId);
-        /* this.ctx.drawImage(this.imgGameOver, 0, 0, this.width, this.height); */
         this.ctx.font = "20px silkscreen"
         this.ctx.fillStyle = "white"
-        this.ctx.fillText(`FINAL SCORE: ${this.points}`, 520, 410 )
         document.getElementById('restart-button').style.display = "block"
       
       }

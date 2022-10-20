@@ -30,8 +30,6 @@ class Player {
   }
   
     draw() {
-      /* this.img.src = 'docs/assets/images/moto1.png'; */
-      //console.log('moto makes brrrr')
       this.ctx.drawImage(this.img, this.x, this.y, 110, 140);
     }
 
