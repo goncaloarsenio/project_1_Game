@@ -42,12 +42,17 @@
 }
  
 #restart-button{
+    margin-left: 330px;
+    width: 17%;
+    height: 60px;
+    padding: 10px;
     position: absolute;
+    /*
     top: 35px;
     left: 670px;
-    /* padding: 5px; */
+    padding: 5px;
     padding-right: 15px;
-    padding-left: 15px;
+    padding-left: 15px; */
     color:white;
     font-size: 25px;
     font-family: 'Silkscreen', cursive;
